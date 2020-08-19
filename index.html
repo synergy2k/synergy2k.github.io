@@ -13,33 +13,43 @@
 			height: 100%;
 			overflow: hidden;
 		}
-		.center
-		{
-		  position: absolute;
-		  margin: auto;
-		  top: 0;
-		  right: 0;
-		  bottom: 0;
-		  left: 0;
-		  width: 1000px;
-		  height: 1000px;
-		  border-radius: 3px;
-		}
 		@media (min-width: 0) {
 		.center2 {
-   margin: auto;			width: 500px;
+   margin: auto;			width: 300px;
 			height: auto;
 		  box-shadow: 0px 0px 23px 1px rgba(0,0,0,0.5);
 		}
 		}
 		@media (min-width: 1200px) {
 		.center2 {
-   margin: auto;			width: 400px;
+   margin: auto;			width: 500px;
 			height: auto;
 			margin-bottom: 5px;
 		  box-shadow: 0px 0px 23px 1px rgba(0,0,0,0.5);
 		}
 		}
+@media (min-height: 0px) {
+			.center2 {
+				display: none;
+			}
+		}
+		@media (min-height: 500px) {
+			.center2{ 
+			display: block; }
+		}
+
+		
+		.center {
+    position: fixed;
+    /* center the element */
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    /* give it dimensions */
+    min-height: 10em;
+    width: 90%;
+}
 		
 		.underLogo {
 			color: gray;
@@ -67,15 +77,25 @@
   top: 0;
 }
 
-.centerParent {
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
-}
 
 .image {
 	width: 100%;
 	height: auto;
+}
+
+.fixed-center
+{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    text-align: center;
 }
 
 </style>
@@ -92,15 +112,13 @@
 
 
 <body>
-	<div class="centerParent">
-		<div class="center">
+		<div class="fixed-center">
 			<div class="siema center2">
 				<div><img class="slide image" src="images/34.png"/></div>
 				<div><img class="slide image" src="images/1.png"/></div>
 				<div><img class="slide image" src="images/2.png"/></div>
 				<div><img class="slide image" src="images/5.png"/></div>
-				<div><img class="slide image" src="images/6.png"/></div>
-			</div>
+				<div><img class="slide image" src="images/6.png"/></div>			</div>
 			<img src="logo.png" />
 			<div class="underLogo">
 				<p>1.0.427.0</p>
@@ -112,10 +130,9 @@
 
 			</div>
 		</div>
-	</div>
 
 		
-<script src="https://my.nikah.io/wp-includes/js/slider/siema.min.js"></script>
+<script src="siema.min.js"></script>
 	<script>
   		const mySiema = new Siema({
 		  selector: '.siema',
