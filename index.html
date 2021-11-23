@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Synergy2K</title>
+	<meta name="description" content="The official website for the latest version of Synergy2K." />
+	<style>
+		@font-face {
+			font-family: cherry;
+			src: url(Cherry.ttf);
+		}
+
+		@font-face {
+			font-family: roboto;
+			src: url(roboto.ttf);
+		}
+		html, body {
+			background-color: #f3f3f3 !important;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+		@media (min-width: 0) {
+			.center2 {
+				margin: auto;			width: 50vw;
+				height: auto;
+			}
+		}
+		@media (min-width: 1900px) {
+			.center2 {
+				margin: auto;
+				width: 40vw;
+				height: auto;
+				margin-bottom: 5px;
+				/*box-shadow: 0px 0px 23px 1px rgba(0,0,0,0.5);*/
+			}
+		}
+		@media (min-height: 0px) {
+			.center2 {
+				display: none;
+			}
+		}
+		@media (min-height: 500px) {
+			.center2{ 
+				display: block; }
+			}
+
+			.time {
+				margin-top: 20px;
+				font-family: cherry;
+				font-size: 32pt;
+			}
+
+
+			.time > * {
+				display: inline-block;
+				padding: 0;
+			}
+			.center {
+				position: fixed;
+				/* center the element */
+				right: 0;
+				left: 0;
+				margin-right: auto;
+				margin-left: auto;
+				/* give it dimensions */
+				min-height: 10em;
+				width: 90%;
+			}
+
+			.underLogo {
+				color: gray;
+				font-size: 12pt;
+				font-family: roboto;
+				text-align: center;
+			}
+			.split {
+				height: 50% !important;
+				width: 100%;
+				position: fixed;
+				z-index: 1;
+				left: 0;
+				overflow-x: hidden;
+				padding-top: 0px;
+			}
+
+/* Control the left side */
+.left {
+	bottom: 0;
+}
+
+/* Control the right side */
+.right {
+	top: 0;
+}
+
+
+.image {
+	width: 100%;
+	height: auto;
+}
+
+.fixed-center
+{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: auto;
+	height: auto;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	text-align: center;
+}
+
+</style>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+</head>
+
+
+
+<body>
+	<div class="fixed-center">
+		<div class="siema center2">
+			<div><img class="slide image" src="new_game.png"/></div>
+		</div>
+		<div class="underLogo">
+			<div class="time">
+				<p id="d">00</p>
+				<p>:</p>
+				<p id="h">00</p>
+				<p>:</p>
+				<p id="m">00</p>
+				<p>:</p>
+				<p id="s">00</p>
+			</div>
+
+		</div>
+	</div>
+
+
+	<script>
+		var countDownDate = new Date("Dec 7, 2021 00:00:00").getTime();
+		var myfunc = setInterval(function() {
+			var now = new Date().getTime();
+			var timeleft = countDownDate - now;
+			    
+			var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+			// code goes here
+			document.getElementById("d").innerHTML = days + "d "
+document.getElementById("h").innerHTML = hours + "h " 
+document.getElementById("m").innerHTML = minutes + "m " 
+document.getElementById("s").innerHTML = seconds + "s"
+		}, 1000);
+
+</script>
+</body>
+</html>
