@@ -6,7 +6,7 @@
 	<style>
 		@font-face {
 			font-family: cherry;
-			 src: url("Cherry.ttf");
+			src: url(Cherry.ttf);
 		}
 
 		@font-face {
@@ -134,13 +134,7 @@
 		</div>
 		<div class="underLogo">
 			<div class="time">
-				<p id="d">00</p>
-				<p>:</p>
-				<p id="h">00</p>
-				<p>:</p>
-				<p id="m">00</p>
-				<p>:</p>
-				<p id="s">00</p>
+				<p id="d">thank you for waiting. the website is being updated as we speak :)</p>
 			</div>
 
 		</div>
@@ -148,21 +142,7 @@
 
 
 	<script>
-		var countDownDate = new Date("Dec 7, 2021 00:00:00").getTime();
-		var myfunc = setInterval(function() {
-			var now = new Date().getTime();
-			var timeleft = countDownDate - now;
-			    
-			var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-			var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-			var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-			var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
-			// code goes here
-			document.getElementById("d").innerHTML = days + "d "
-document.getElementById("h").innerHTML = hours + "h " 
-document.getElementById("m").innerHTML = minutes + "m " 
-document.getElementById("s").innerHTML = seconds + "s"
-		}, 1000);
+		
 
 </script>
 </body>
